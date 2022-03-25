@@ -1,1 +1,0 @@
-# inseo24.github.io
