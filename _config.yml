@@ -4,12 +4,13 @@ description: >-
   Hi:) 
   I'm seoin.
   Have a nice day! 
-baseurl: "" 
+baseurl: "/" 
 url: "https://inseo24.github.io"
 twitter_username: befine324
 github_username:  inseo24
 
 theme: just-the-docs
+remote-theme: 
 
 plugins:
   - jekyll-seo-tag
