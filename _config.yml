@@ -1,23 +1,14 @@
 title: im seoin
-email: befine324@gmail.com
-description: >- 
-  Hi:) 
-  I'm seoin.
-  Have a nice day! 
 baseurl: "/" 
 url: "https://inseo24.github.io"
-twitter_username: befine324
-github_username:  inseo24
 
-# theme: just-the-docs
+theme: just-the-docs
 remote_theme: just-the-docs/just-the-docs
 
 plugins:
   - jekyll-seo-tag
 
 permalink: pretty
-exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
-, "docs/tests/"]
 
 search_enabled: true
 
