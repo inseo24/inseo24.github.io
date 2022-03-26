@@ -9,6 +9,7 @@ url: "https://inseo24.github.io"
 twitter_username: befine324
 github_username:  inseo24
 
+# theme: just-the-docs
 remote_theme: just-the-docs/just-the-docs
 
 plugins:
