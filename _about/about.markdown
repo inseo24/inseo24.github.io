@@ -5,8 +5,6 @@ permalink: /
 position: about
 ---
 
-안녕하세요! <br />
-
 Hi, there! <br />
 
 경영학을 전공했고 현재는 개발자로 살고 있는 서인입니다. <br />
