@@ -3,7 +3,9 @@
 [블로그 구경하기](https://inseo24.github.io)
 
 블로그 만들었다 눈누난나 
-근데 이거 어떻게 자동으로 주소 생기는 거지! -> 와 이거 github action 으로 돌아가네 빌드 에러 자꾸 난다 이거 이렇게 push 되자마자 배포되는 거 짱이다... 
+근데 이거 어떻게 자동으로 주소 생기는 거지! -> 와 이거 github action 으로 돌아가네 빌드 에러 자꾸 난다 이거 이렇게 push 되자마자 배포되는 거 짱이다...  가 아니고 깃헙 페이지로 돌아가는 거였구나. 이거 깃헙 액션으 설정해봤는데 잘 되는지 테스트를 해보자
+
+[![Jekyll CI](https://github.com/inseo24/inseo24.github.io/actions/workflows/jekyll.yml/badge.svg)](https://github.com/inseo24/inseo24.github.io/actions/workflows/jekyll.yml)
 
 <br />
 
