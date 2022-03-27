@@ -2,7 +2,7 @@ title: im seoin
 baseurl: "/" 
 url: "https://inseo24.github.io"
 
-# theme: just-the-docs
+theme: just-the-docs/just-the-docs
 remote_theme: just-the-docs/just-the-docs
 
 plugins:
