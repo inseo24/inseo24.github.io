@@ -23,10 +23,13 @@ parent: Kotlin study plan
 - This license lets others remix, tweak, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.
 - 이 라이센스는 상업 목적이 아니면 다른 사람이 수정해도 상관 없다~ 라는 거 같다. 동일 조건이면 새로운 창작물에도 라이센스를 따로 부여할 수 있다는 건가? 여튼 [출처](https://guides.lib.umich.edu/creativecommons/licenses) 에서 더 자세한 건 보세요.
 
- 
+ <br/>
 
 <img width="463" alt="image" src="https://user-images.githubusercontent.com/84627144/160267585-cf7901ee-807d-4779-8f63-1985b4d0c085.png">
 
+
+<br/>
+ 
 ---
 
 그다음 보게 된 것은 jvm 17과 kotlin version 1.6.10 이라는 건데 1.6?
@@ -38,6 +41,8 @@ parent: Kotlin study plan
 1.6.10 에서 다른 건 잘 모르겠고 Kover라는게 생겼다고 한다. 코드 커버리지를 측정하는 gradle plugin이라는데 기존에 jacoco가 gradle toolchain, 멀티 플랫폼 프로젝트에서는 완전히 통합되지 않은 이슈를 픽스하기 위해서 만들었다고 한다. 아직 개발 초기 단계구나. 
 
 Kotlin + Coverage = Kover 인건가!
+
+<br/>
 
 ---
 
@@ -53,9 +58,18 @@ Kotlin + Coverage = Kover 인건가!
 Welcome to the home of JSR-330: Dependency Injection for Java.
 > 
 
+<br/>
+
 <img width="255" alt="image" src="https://user-images.githubusercontent.com/84627144/160266345-31d4b1de-81dc-4832-9024-643823df9803.png">
 
+<br/>
+
 **음 뭔가 단출해서(?) 좋군요!**
+
+
+<br/>
+<br/>
+
 
 `version_jsr305 = "3.0.2"`
 
@@ -66,6 +80,8 @@ jsr305도 처음 보는데 컴파일 시점에 정적으로 버그 잡아 준다
 오호 어노테이션이 javax.validation에서 보던 것과 비슷한게 보이는데 NonNull 같은 거.
 
 이거 컴파일 할 때 저기 어노테이션 붙은 것들 데이터 의도한대로 담고 있는지 다 체크해주나 보다. 이거는 대충 봐도 꽤 좋은 거 같다!! 나중에 사용하는 예시 좀 보고 개인 프로젝트에 써봐야지.
+
+<br/>
 
 ---
 
@@ -81,6 +97,8 @@ jsr305도 처음 보는데 컴파일 시점에 정적으로 버그 잡아 준다
 api-core-infra-impl 쪽 domain.user 디렉토리 안에 UserEntity 위에 달린 재밌는 주석이 달려 있었다!
 
 infra라고 써있는게 JPA 같은거나 외부 서비스, message 관련인가 싶긴 했는데 domain.user 밑 repository가 있었다. 디렉토리 구조가 뭔가 신기한데 저렇게 도메인별로 구분하는 건가? 
+
+<br/>
 
 일단 첫 번째 포인트에 대한 생각을 적어보자면(코틀린 3개월차라 틀릴 수 있음)
 
@@ -138,6 +156,9 @@ public static boolean equals(Object a, Object b) {
 }
 ```
 
+<br/>
+
+
 ```kotlin
 // 작성되어 있던 코드
 override fun hashCode(): Int {
@@ -179,6 +200,8 @@ Object.hash로 한 번에 묶으니까 엄청 깔끔하다. 워후
 
 ---
 
+<br/>
+
 2번째 포인트는 엔티티와 도메인의 차이에 대한 점인데.
 
 헥사고날 아키텍처를 학습하면서 공부했던 부분이라 음 정리해보자면.
@@ -191,11 +214,17 @@ Object.hash로 한 번에 묶으니까 엄청 깔끔하다. 워후
 
 여튼 헥사고날은 내부와 외부를 나눠서 비즈니스 로직이 표현 로직이나 데이터 접근에 의존하지 않게 만드는게 포인트라고 할 수 있는데 여기서 내부에 해당하는게 도메인! 외부에 해당하는게 엔티티라고 보면 될 거 같다!
 
+<br/>
+
 ---
 
 아 User 엔티티 Editor 타고 갔다가 또 질문 발견했다. 이건 내일 하는 걸로...
 
 `// POINT: 왜 User 도메인 모델을 mutable 로 설계하지 않고, 이런 타입을 별도로 만들었을까요?`
+
+
+<br/>
+
 
 ### 오늘 알 게 된 것
 
@@ -210,6 +239,8 @@ Object.hash로 한 번에 묶으니까 엄청 깔끔하다. 워후
 3. 설로인 코드에는 질문이 산다!(그것도 엄청 많이!!)
     
     
+<br/>
+
 
 ### 다음에 할 것
 
