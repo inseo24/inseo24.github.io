@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 🍖 뜯어보기 1일차 - build.gradle(feat. Entity vs Domain)
+date: 2022-03-27
 permalink: /kotlin/study-plan/sirloin/1
 position: kotlin
 nav_order: 3
@@ -9,6 +10,9 @@ parent: Kotlin study plan
 
 
 # 🍖 뜯어보기 1일차 - 시작은 build.gradle 부터?(feat. Entity vs Domain)
+
+
+<br/>
 
 ### 시작
 
@@ -23,14 +27,14 @@ parent: Kotlin study plan
 - This license lets others remix, tweak, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.
 - 이 라이센스는 상업 목적이 아니면 다른 사람이 수정해도 상관 없다~ 라는 거 같다. 동일 조건이면 새로운 창작물에도 라이센스를 따로 부여할 수 있다는 건가? 여튼 [출처](https://guides.lib.umich.edu/creativecommons/licenses) 에서 더 자세한 건 보세요.
 
- <br/>
 
 <img width="463" alt="image" src="https://user-images.githubusercontent.com/84627144/160267585-cf7901ee-807d-4779-8f63-1985b4d0c085.png">
 
 
-<br/>
  
 ---
+
+<br/>
 
 그다음 보게 된 것은 jvm 17과 kotlin version 1.6.10 이라는 건데 1.6?
 
@@ -42,7 +46,6 @@ parent: Kotlin study plan
 
 Kotlin + Coverage = Kover 인건가!
 
-<br/>
 
 ---
 
@@ -84,6 +87,8 @@ jsr305도 처음 보는데 컴파일 시점에 정적으로 버그 잡아 준다
 <br/>
 
 ---
+
+<br/>
 
 오늘은 여기까지 하고 다른 거 좀 뒤져볼까~? 하다가 재밌는 걸 발견했다.
 
@@ -215,6 +220,159 @@ Object.hash로 한 번에 묶으니까 엄청 깔끔하다. 워후
 여튼 헥사고날은 내부와 외부를 나눠서 비즈니스 로직이 표현 로직이나 데이터 접근에 의존하지 않게 만드는게 포인트라고 할 수 있는데 여기서 내부에 해당하는게 도메인! 외부에 해당하는게 엔티티라고 보면 될 거 같다!
 
 <br/>
+
+
+----
+
+
+라고 썼었는데 트친님이 준 한 멘션으로 블로그 글을 좀 더 자세히 써야 겠다고 생각했다.
+
+<img width="597" alt="image" src="https://user-images.githubusercontent.com/84627144/160275778-3ad9030f-683b-4dbf-aaa9-06cbee996641.png">
+
+---
+
+
+룰루랄라 블로그 글 쓰고 저 글 썼어요! 하고 트위터에 올렸다가 엔티티 용어가 DDD에서 말하는 것과 헷갈릴 수도 있다는 말을 듣고 띠옹!!! 했다.
+
+그래서 급 공부해서 추가해 글을 쓰게 됐다.
+
+<br />
+
+일단 나는 DDD를 잘 모르고 아래와 같이 도메인, 엔티티를 생각하고 위의 글을 썼다. 
+
+도메인 → 비즈니스 로직
+
+엔티티 → 영속성 로직
+
+트친님이 말해주신 부분은 엔티티라는 용어가 DDD에서 인프라 영역이 아닌 Domain Model의 한 종류라는! 말이었다. 음 설로인에 질문으로 나온 파일이 `@Table` 어노테이션이 붙어서 당연히 인프라 영역이라고 생각하고 글을 썼는데 생각해보니 내가 이 context를 위에 설명하지 않고 글을 썼구나! 싶었다.
+
+<br />
+
+그래서 밑에서지만 추가를 하자면 위의 질문은 아래 코드에 있던 주석이었다.
+
+```kotlin
+// 도메인 객체 생성에 여러 필드가 필요하기 때문에 불가피
+@Suppress("LongParameterList")
+@Table("users")
+// POINT: 이 클래스를 data class 로 선언하고, equals / hashCode 를 삭제해도 문제가 없을까요?
+// POINT: Entity 와 Domain Model 의 차이란 뭘까요?
+internal class UserEntity constructor(
+    @get:Id
+    var id: Long? = null,
+    override val uuid: UUID,
+    nickname: String,
+    profileImageUrl: String,
+    override var deletedAt: Instant?,
+    override var createdAt: Instant,
+    updatedAt: Instant,
+    override var version: Long,
+) : User.Editor {
+    override var nickname: String = ""
+        set(value) {
+            field = value
+            this.updatedAt = Instant.now()
+        }
+생략 ...
+```
+
+<br />
+
+그런데 DDD에서 말하는 Entity가 뭘까? 갑자기 궁금해져서 검색을 해봤다.
+
+<aside>
+💡 An object defined primarily by its identity is called an ENTITY.
+An ENTITY is anything that has continuity through a life cycle and distinctions independent of attributes that are important to the application's user.
+
+</aside>
+
+위 글은 에릭 에반슨의 도메인 주도 설계 CH5에서 발췌된 글이라고 한다. 여기서 말하는 엔티티는
+
+- identity(ID)로 주로 정의되는 객체이고
+- 라이프 사이클을 통해 연속성을 갖고(?)
+- 앱 사용자들에게 중요한 특성에 구별되는 독립적이어야 한다고.
+
+~~이게 뭔 개 풀 뜯어 먹는 소리지?~~
+
+
+<br/>
+
+스택오버플로우에 이런 예시가 있었다.
+
+누군가 어떤 질문글에 대해서 안의 내용을 바꾸건 그 글의 제목을 바꾸건 따봉 버튼을 눌러주든 그건 여전히 같은 질문이다. 과거의 텍스트에서 현재의 텍스트로 여전히 진행되고 있다. 텍스트는 시간에 따라 변한다.
+
+도메인 모델에서의 간단한 엔티티는 RDBMS의 엔티티에 매핑될 수도 있으나 꼭 그런 것은 아니다. 정확히 얘기하면, 우리는 반드시 엔티티의 현재 상태를 단일 행에 저장한다. 하지만 해당 상태에 컬렉션이 포함된다면 여러 테이블의 다수의 행을 통해 분산될 것이다.(즉, 한 엔티티에만 종속되지 않을 수도 있다 라는 얘기인 듯)
+
+와 이걸 봐도 이해가 안 가지만 여기서 말하는 엔티티는 아마도 다수의 테이블의 상태로 분산될 수 있으니 한 엔티티로 반드시 매핑되지 않음을 의미하는 것 같다.
+ 
+<br/>
+
+좀 더 검색하다가 마틴 파울러의 블로그 글을 발견했다.
+
+```java
+🧔‍♂️ Entity: 
+Objects that have a distinct identity that runs through time and different representations. 
+You also hear these called "reference objects".
+```
+
+위에서와 비슷한 엔티티 설명인데 
+
+- 시간에 따라, 다른 표현에 따라 고유 정체성을 가진 객체
+- 참조 객체라고도 들어봤지? 그렇게 부르기도 해.
+
+저 글에서 runs through time 을 어떻게 해석해야 하는거지? ~~시간을 따라 달리는 소녀?~~
+
+친절한 마틴 아저씨가 예시를 들어주신다.
+
+```java
+🧔‍♂️ 
+Entities are usually big things like Customer, Ship, Rental Agreement. 
+Values are usually little things like Date, Money, Database Query.
+Services are usually accesses to external resources like Database Connection, Messaging Gateway, Repository, Product Factory.
+```
+
+엔티티는 보통 큰 것들인데 고객, 배, 렌탈 계약 같은거야.
+
+값은 보통 작은 것들인데 날짜, 돈, 데이터베이스 쿼리 같은거야.
+
+서비스는 보통 데이터베이스 커넥션이나 메시징 게이트웨이, 레포지터리 같은 외부 리소스 접근 같은거야.
+
+어째 Entity, Value Object(VO), Service를 하나하나 친절히 구분해주신다.
+
+근데 마지막에 충격적인 소식을 하나 전달해주신다.
+
+```java
+🧔‍♂️ 
+One of the problems with this area is that this terminology, although evocative, gets terribly muddled up with other ideas. 
+Entity is often used to represent a database table or an object that corresponds to a database table. 
+So if I use these terms I have to make it clear I'm using them within the context of Domain Models and according to their meaning within Eric's book. S
+o be wary of assuming people are using these words like this - they are heavily overloaded. 
+Sadly there's not much alternative.
+```
+
+DDD의 엔티티의 문제는 끔찍하게도 데이터베이스에서 말하는 엔티티와 개념이 다르단다! 
+
+그래서 나는 이걸 설명할 때 매번 에릭의 DDD의 엔티티라고 미리 언급하고 얘기해 ㅇㅇ. 
+ 
+이 개념을 다르게 생각해야 해서 머리가 터질 거 같지?
+
+근데 슬프게 대안은 없단다(?)
+
+~~이런 망할~~
+
+<br />
+
+### 결론
+
+DDD에서 말하는 엔티티란 속성이 아닌 ID로 구별되는 객체를 말하는 것 같은데 데이터베이스의 엔티티와 100%로 일치하는 개념이 아니랍니다. 
+
+보통 ~~우리가~~내가 생각하는 Entity는 ORM에서 말하는 Entity인데 DB 테이블과 매핑하기 위한 객체라고 생각하면 될 거 같다. 그러다보니 보통 객체가 언제, 어디서, 어떻게 저장되는지를 관심을 두고 있다.
+
+DDD의 Entity는 영속성에 대해서는 모르는 객체인 거 같다.(인터페이스 정도만 알고 있는듯) 영속성을 모르기 때문에 ORM에는 전혀 관심이 없이 객체가 어디서 어떻게 저장되는지엔 관심이 없다. 경우에 따라 ORM 매핑되는 객체가 도메인 모델일 때 같은 개념으로 사용될 수도 있긴 한 것 같다.~~(뭔 소리야)~~
+
+추가해서 더 공부해봤는데 뭔가 더더 미궁 속으로 들어간 느낌이다. 후후 ...
+
+
+<br />
 
 ---
 
