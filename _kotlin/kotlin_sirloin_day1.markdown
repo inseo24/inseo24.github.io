@@ -25,7 +25,7 @@ parent: Kotlin study plan
 
  
 
-<img width="161" alt="image" src="[https://user-images.githubusercontent.com/84627144/160265514-d58187c6-aaad-4ca2-b7d8-5225cb38e1af.png](https://user-images.githubusercontent.com/84627144/160265514-d58187c6-aaad-4ca2-b7d8-5225cb38e1af.png)">
+<img width="463" alt="image" src="https://user-images.githubusercontent.com/84627144/160267585-cf7901ee-807d-4779-8f63-1985b4d0c085.png">
 
 ---
 
@@ -53,7 +53,7 @@ Kotlin + Coverage = Kover 인건가!
 Welcome to the home of JSR-330: Dependency Injection for Java.
 > 
 
-<img width="255" alt="image" src="[https://user-images.githubusercontent.com/84627144/160266345-31d4b1de-81dc-4832-9024-643823df9803.png](https://user-images.githubusercontent.com/84627144/160266345-31d4b1de-81dc-4832-9024-643823df9803.png)">
+<img width="255" alt="image" src="https://user-images.githubusercontent.com/84627144/160266345-31d4b1de-81dc-4832-9024-643823df9803.png">
 
 **음 뭔가 단출해서(?) 좋군요!**
 
@@ -61,7 +61,7 @@ Welcome to the home of JSR-330: Dependency Injection for Java.
 
 jsr305도 처음 보는데 컴파일 시점에 정적으로 버그 잡아 준다고 하는데 이거 어디서 쓰였을까 훔훔
 
-<img width="348" alt="image" src="[https://user-images.githubusercontent.com/84627144/160266378-744b65ad-0dc9-461b-8b03-5851945e4dd4.png](https://user-images.githubusercontent.com/84627144/160266378-744b65ad-0dc9-461b-8b03-5851945e4dd4.png)">
+<img width="348" alt="image" src="https://user-images.githubusercontent.com/84627144/160266378-744b65ad-0dc9-461b-8b03-5851945e4dd4.png">
 
 오호 어노테이션이 javax.validation에서 보던 것과 비슷한게 보이는데 NonNull 같은 거.
 
