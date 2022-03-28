@@ -2,7 +2,7 @@ title: im seoin
 baseurl: "/" 
 url: "https://inseo24.github.io"
 
-# theme: just-the-docs
+theme: just-the-docs
 remote_theme: just-the-docs/just-the-docs
 
 plugins:
@@ -54,7 +54,6 @@ compress_html:
   startings: []
   blanklines: false
   profile: false
-      
 collections:
   about:
     permalink: "/:collection/:path/"
@@ -65,7 +64,11 @@ collections:
   kotlin:
     permalink: "/:collection/:path/"
     output: true
+  etc:
+    permalink: "/:collection/:path/"
+    output: true
 
+  
 just_the_docs:
   collections:
     about:
@@ -74,3 +77,5 @@ just_the_docs:
       name: java
     kotlin:
       name: kotlin
+    etc:
+      name: etc
