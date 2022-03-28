@@ -1,10 +1,9 @@
 ---
 layout: page
-title: 🍖 뜯어보기 1일차 - build.gradle(feat. Entity vs Domain)
-date: 2022-03-27
-permalink: /kotlin/study-plan/sirloin/1
+title: 🍖 뜯어보기 1일차
+permalink: /kotlin/study-plan/1
 position: kotlin
-nav_order: 3
+nav_order: 1
 parent: Kotlin study plan
 ---
 
@@ -13,6 +12,15 @@ parent: Kotlin study plan
 
 
 <br/>
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ### 시작
 

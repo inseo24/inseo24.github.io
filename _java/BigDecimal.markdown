@@ -8,6 +8,17 @@ position: java
 # BigDecimal의 precision, scale 이 뭘까
 <br />
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+<br />
+
 - 출처
 
 [bigdecimal-precision-and-scale](https://stackoverflow.com/questions/35435691/bigdecimal-precision-and-scale)

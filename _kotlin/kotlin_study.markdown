@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: default
 title: Kotlin study plan
 permalink: /kotlin/study-plan
 position: kotlin
-nav_order: 2
 has_children: true
+has_toc: false
 ---
 
 # Kotlin open source를 뜯어보자!
