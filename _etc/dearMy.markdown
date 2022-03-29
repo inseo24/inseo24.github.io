@@ -263,7 +263,7 @@ errorResponse enum class 데이터 구조가 바뀌면 그거 참조하는 부�
 <br/>
 
 
-### 3. 롬복의 `@Data` 는 조심하자 - Setter, toString() ...
+## 3. 롬복의 `@Data` 는 조심하자 - Setter, toString() ...
 
 <br/>
 
