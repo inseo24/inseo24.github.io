@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 모나드야 모나드야! (Monad, Functor) - 1
+title: 모나드야 모나드야! (Monad, Functor) 1탄
 permalink: /etc/monad
 position: etc
 ---
