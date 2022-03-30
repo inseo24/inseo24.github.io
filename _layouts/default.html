@@ -150,6 +150,19 @@ layout: table_wrappers
           </ul>
         {% endif %}
 
+        <hr />
+
+        <div>
+          <script src="https://utteranc.es/client.js"
+          repo="inseo24/inseo24.github.io"
+          issue-term="pathname"
+          label="comments"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+          </script>
+        </div>
+
         {% capture footer_custom %}
           {%- include footer_custom.html -%}
         {% endcapture %}
@@ -161,6 +174,7 @@ layout: table_wrappers
             {% endif %}
 
             {{ footer_custom }}
+
 
             {% if site.last_edit_timestamp or site.gh_edit_link %}
               <div class="d-flex mt-2">
@@ -199,18 +213,7 @@ layout: table_wrappers
     {% endif %}
   </div>
   
-  <hr />
-
-  <div>
-    <script src="https://utteranc.es/client.js"
-    repo="inseo24/inseo24.github.io"
-    issue-term="pathname"
-    label="comments"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
-    </script>
-  </div>
+  
 </body>
 
 </html>
