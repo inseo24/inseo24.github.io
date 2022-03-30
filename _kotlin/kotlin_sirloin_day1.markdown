@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: 🍖 뜯어보기 1일차
 permalink: /kotlin/study-plan/1
 position: kotlin

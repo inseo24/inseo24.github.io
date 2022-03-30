@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: 3개월 전의 내 포폴 내가 피드백하기 1탄
 permalink: /etc/myself/1
 position: etc
