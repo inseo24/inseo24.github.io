@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: BigDecimal 클래스를 공부해보자!(precision, scale ...)
 permalink: /java/bigDecimal
 position: java
