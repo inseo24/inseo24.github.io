@@ -45,7 +45,7 @@ position: etc
 
 그래서 코드를 작성하기 전에 어떻게 해야 할지 노트에 글을 엄청 끄적인다.(정리라기 보단 머리속 생각을 뱉어내는 것에 가까운) 그리고 생각이 정리되면 코딩을 한다. 그래서 보통 생각하는 건 몇 일이 걸리고 코딩은 몇 시간 되지도 않는다. (...)
 
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/84627144/160753536-526d1719-41ad-45ba-b237-9c5039b37880.png">
+
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/84627144/160753516-70091337-5d28-40a0-8d30-ea690ece881e.png">
 
 나도 주르륵 코딩할 수 있는 사람이었으면 좋겠다요...
