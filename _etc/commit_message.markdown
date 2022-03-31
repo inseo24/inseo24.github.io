@@ -3,6 +3,8 @@ layout: post
 title: commit message에 대한 생각(50/72 rule)
 permalink: /etc/commit
 position: etc
+nav_order: 1
+parent: etc
 ---
 
 

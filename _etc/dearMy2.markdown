@@ -3,6 +3,8 @@ layout: post
 title: 3개월 전의 내 포폴 내가 피드백하기 2탄
 permalink: /etc/myself/2
 position: etc
+parent: etc
+nav_order: 4
 ---
 
 # 3개월 전 취준생 “나"의 포폴 피드백하기 2탄

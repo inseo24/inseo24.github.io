@@ -3,6 +3,8 @@ layout: post
 title: 모나드야 모나드야! (Monad, Functor) 1탄
 permalink: /etc/monad
 position: etc
+parent: etc
+nav_order: 2
 ---
 
 
