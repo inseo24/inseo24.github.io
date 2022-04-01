@@ -190,12 +190,12 @@ private boolean isDeleted;
 private LocalDateTime deletedAt;
 
 public void delete() {
-		this.isDeleted = true;
-		this.deletedAt = LocalDateTime.now();
+	this.isDeleted = true;
+	this.deletedAt = LocalDateTime.now();
 }
 
 public void update(String comment) {
-		this.comment = comment;
+	this.comment = comment;
 }
 ```
 
@@ -216,9 +216,9 @@ public void delete(int id, String userId) {
 }
 
 @Transactional
-public void update(CommentDTO commentDTO, Integer id) {
-    final CommentEntity comment = commentRepository.findById(id).orElseThrow();
-    comment.update(commentDTO.getComment());
+public void update(String comment, Integer id) {
+    final CommentEntity entity = commentRepository.findById(id).orElseThrow();
+    entity.update(comment);
 }
 ```
 
