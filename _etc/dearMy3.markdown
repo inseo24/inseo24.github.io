@@ -22,10 +22,6 @@ nav_order: 5
 
 <br />
 
-# 3개월 전 취준생 “나"의 포폴 피드백하기 3탄
-
-<br />
-
 ## 이어서
 
 <br />
@@ -194,12 +190,12 @@ private boolean isDeleted;
 private LocalDateTime deletedAt;
 
 public void delete() {
-		this.isDeleted = true;
-		this.deletedAt = LocalDateTime.now();
+	this.isDeleted = true;
+	this.deletedAt = LocalDateTime.now();
 }
 
 public void update(String comment) {
-		this.comment = comment;
+	this.comment = comment;
 }
 ```
 
@@ -220,9 +216,9 @@ public void delete(int id, String userId) {
 }
 
 @Transactional
-public void update(CommentDTO commentDTO, Integer id) {
-    final CommentEntity comment = commentRepository.findById(id).orElseThrow();
-    comment.update(commentDTO.getComment());
+public void update(String comment, Integer id) {
+    final CommentEntity entity = commentRepository.findById(id).orElseThrow();
+    entity.update(comment);
 }
 ```
 
@@ -267,7 +263,11 @@ interface Editor : User {
 
 User 도메인도 인터페이스로 만들고 val로 수정 안 할 컬럼은 위에 다 빼놓고 수정할 컬럼만 Editor에 상속 받아서 담고 있었다. 여기서도 필드에 직접 assign 하지 말고 메소드를 이용하세요~ 라고 친절히 말 해주고 있네.
 
-여기서 이런 타입을 따로 만들고 위에 직접 assign 할 때 문제가 생길 수 있다고 경고문을 써준 이유는 아마도 직접 data를 set하지 못하게 막고 수정할 수 있는 컬럼만 따로 빼둔 거 위해서 같다.
+여기서 이런 타입을 따로 만들고 위에 직접 assign 할 때 문제가 생길 수 있다고 경고문을 써준 이유는 
+
+아마도 직접 data를 set하지 못하게 막고 수정할 수 있는 컬럼만 따로 빼두기 위해서 같다.
+
+(인터페이스니까 이것만 수정할 수 있어요~ 표시할 수도 있고)
 
 좀 궁금한 점은 이건데.
 
