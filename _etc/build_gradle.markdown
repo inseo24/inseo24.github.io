@@ -3,7 +3,7 @@ layout: post
 title: build.gradle 보기
 permalink: /etc/build/gradle
 position: etc
-nav_order: 5
+nav_order: 6
 parent: etc
 ---
 
