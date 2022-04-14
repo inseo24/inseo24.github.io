@@ -162,7 +162,7 @@ abstract class Book {
 abstract class Book { 
   private author: string;  private title: string;
 
-	constructor (author: string, title: string) {
+    constructor (author: string, title: string) {
     this.author = author;
     this.title = title;
   }
@@ -187,11 +187,11 @@ abstract class Book {
 
   // Common methods
   public getBookTitle (): string {    
-			return this.title;  
+		return this.title;  
 	}  
 	
 	public getBookAuthor (): string {    
-			return this.title;  
+		return this.title;  
 	}
 }
 ```
@@ -358,7 +358,10 @@ export class UsersAPI extends BaseAPI {
   }
  
   // High-level functionality
-  async getAllUsers (): Promise<User[]> {    let response = await this.get('/');    return response.data.users as User[];  }...
+  async getAllUsers (): Promise<User[]> {    
+    let response = await this.get('/');    
+    return response.data.users as User[];  
+  }...
 }
 ```
 
