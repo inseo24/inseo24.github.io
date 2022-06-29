@@ -3,7 +3,7 @@ layout: post
 title: Test Code 작성기 1
 permalink: /spring/test_code/1
 position: spring
-parent: spring
+parent: Spring
 nav_order: 1
 ---
 
