@@ -60,6 +60,9 @@ collections:
   kotlin:
     permalink: "/:collection/:path/"
     output: true
+  spring:
+    permalink: "/:collection/:path/"
+    output: true
   etc:
     permalink: "/:collection/:path/"
     output: true
@@ -73,5 +76,7 @@ just_the_docs:
       name: java
     kotlin:
       name: kotlin
+    spring:
+      name: spring
     etc:
       name: etc
