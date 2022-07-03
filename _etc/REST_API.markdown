@@ -33,7 +33,7 @@ nav_order: 7
 
 ### **1. REST**
 
-### **REST 란?**
+### **1) REST 란?**
 
 - **RE**presentational
 - **S**tate
@@ -71,7 +71,7 @@ Roy T.Fielding이 REST를 박사 논문으로 발표
 
 ### **2. API**
 
-### **REST API의 등장**
+### **1) REST API의 등장**
 
 - 1998년 Microsoft XML-RPC, SOAP 등장
 - 2000년 Salesforce에서 API 공개했지만 단순한 API임에도 굉장히 복잡했음
