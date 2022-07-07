@@ -39,7 +39,7 @@ nav_order: 8
 
 구체화된 클래스는 실제적이고 런타임에 사용하기 위해 new 키워드로 객체를 생성할 수 있습니다. 
 
-우리가 마주치는 대부분의 클래스가 concrte class에 해당합니다.
+우리가 마주치는 대부분의 클래스가 Concrete class에 해당합니다.
 
 ```tsx
 //Concrete class
