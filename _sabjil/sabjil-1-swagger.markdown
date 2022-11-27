@@ -30,6 +30,8 @@ nav_order: 1
 4. Swagger-UI는 지정한 path로 검색 시 base-path로 redirect를 시킴
    1. 이 때 `/service-name/` 이 날아가버림 
    2. Istio에서 해당 주소가 어디 서비스인지 찾지 못해 404 에러가 뜸
+
+
 ---
 
 <br/>
