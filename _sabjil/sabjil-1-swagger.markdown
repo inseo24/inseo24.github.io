@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 1 : Swagger UI 와 Load Balancer 
-permalink: /sabjil/1-swagger
+permalink: /sabjil/swagger
 position: sabjil
 ---
 
