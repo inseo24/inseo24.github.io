@@ -4,7 +4,7 @@ title: 삽질 일기 1 : Swagger UI 와 Load Balancer
 permalink: /sabjil/intro/1-swagger
 position: sabjil
 nav_order: 1
-parent: Sabjil
+parent: sabjil
 ---
 
 
