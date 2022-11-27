@@ -57,6 +57,9 @@ collections:
   java:
     permalink: "/:collection/:path/"
     output: true
+  sabjil:
+    permalink: "/:collection/:path"
+    output: true
   kotlin:
     permalink: "/:collection/:path/"
     output: true
@@ -74,6 +77,8 @@ just_the_docs:
       name: about
     java:
       name: java
+    sabjil:
+      name: sabjil
     kotlin:
       name: kotlin
     spring:
