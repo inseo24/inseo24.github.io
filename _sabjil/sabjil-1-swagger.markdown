@@ -1,15 +1,13 @@
 ---
 layout: post
-title: 1 : Swagger UI 와 Load Balancer 
+title: Swagger UI Redirection 문제 (feat. Load Balancer)
 permalink: /sabjil/swagger
 position: sabjil
 parent: sabjil
 nav_order: 1
 ---
 
-
 # 삽질 일기 1편 : 로드 밸런싱 + Swagger UI Redirection 문제 해결
-
 
 <br/>
 
