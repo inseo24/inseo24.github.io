@@ -58,7 +58,7 @@ collections:
     permalink: "/:collection/:path/"
     output: true
   sabjil:
-    permalink: "/:collection/:path"
+    permalink: "/:collection/:path/"
     output: true
   kotlin:
     permalink: "/:collection/:path/"
