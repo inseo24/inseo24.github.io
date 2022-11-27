@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 삽질 일기 1 : Swagger UI 와 Load Balancer 
+title: 1 : Swagger UI 와 Load Balancer 
 permalink: /sabjil/1-swagger
 position: sabjil
-nav_order: 1
 parent: sabjil
+nav_order: 1
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: sabjil
-permalink: /sabjil/intro
+permalink: /sabjil
 position: sabjil
 has_children: true
 has_toc: true
