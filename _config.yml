@@ -54,10 +54,10 @@ collections:
   about:
     permalink: "/:collection/:path/"
     output: true
-  java:
+  sabjil:
     permalink: "/:collection/:path/"
     output: true
-  sabjil:
+  java:
     permalink: "/:collection/:path/"
     output: true
   kotlin:
