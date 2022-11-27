@@ -3,6 +3,8 @@ layout: post
 title: 1 : Swagger UI 와 Load Balancer 
 permalink: /sabjil/swagger
 position: sabjil
+parent: sabjil
+nav_order: 1
 ---
 
 
