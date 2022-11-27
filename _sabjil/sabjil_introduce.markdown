@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Sabjil Diary
-permalink: /sabjil/introduction
+title: Sabjil
+permalink: /sabjil/intro
 position: sabjil
 has_children: true
-has_toc: false
+has_toc: true
 ---
 
 # 삽질 일기
