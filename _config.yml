@@ -75,10 +75,10 @@ just_the_docs:
   collections:
     about:
       name: about
-    java:
-      name: java
     sabjil:
       name: sabjil
+    java:
+      name: java
     kotlin:
       name: kotlin
     spring:

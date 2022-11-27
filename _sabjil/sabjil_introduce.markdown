@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sabjil
+title: sabjil
 permalink: /sabjil/intro
 position: sabjil
 has_children: true
