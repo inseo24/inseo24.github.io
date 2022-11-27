@@ -16,7 +16,7 @@ Hi, there! <br />
 방문해주셔서 감사합니다:) <br />
 
 
-[twitter](https://twitter.com/befine324) <br />
+[twitter](https://twitter.com/inseo24_dev) <br />
 [github](https://github.com/inseo24) <br />
 [naver blog](https://blog.naver.com/jnh02215) <br />
 
