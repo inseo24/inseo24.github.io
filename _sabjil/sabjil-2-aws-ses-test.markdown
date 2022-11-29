@@ -32,7 +32,7 @@ nav_order: 2
 
 ### 해결 방안 
 
-1. 코드가 동작하기 전에 테스트 코드가 종료 되어 보내지지 않은 것이었다. latch를 써서 보내는 걸 기다려주자.
+- 코드가 동작하기 전에 테스트 코드가 종료 되어 보내지지 않은 것이었다. latch를 써서 보내는 걸 기다려주자. 
 
 ```kotlin
     
@@ -79,7 +79,7 @@ nav_order: 2
 
 
 
-2. 알고보니 얘만 MIME 인코딩이 필요하다고 한다.
+- 알고보니 얘만 MIME 인코딩이 필요하다고 한다.
 
   - import com.amazonaws.AmazonWebServiceRequest 에 주석으로 달려 있다.
   
@@ -91,11 +91,13 @@ destination – The destination for this email, composed of To:, CC:, and BCC: f
 ```
 
   -  `javax.mail:mail:1.4.1` 의존성에 있는 MimeUtilty를 활용했다.
-```kotlin
-private fun encodeNameWithAddress(fromName: String, from: String): String {
-        return MimeUtility.encodeText(fromName, "utf-8", "Q") + "<" + from + ">"
-    }
-```
+
+  ```kotlin
+      
+      private fun encodeNameWithAddress(fromName: String, from: String): String {
+          return MimeUtility.encodeText(fromName, "utf-8", "Q") + "<" + from + ">"
+      }
+  ```
 
 
 <br/>
