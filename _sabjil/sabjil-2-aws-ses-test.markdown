@@ -35,7 +35,6 @@ nav_order: 2
 - 코드가 동작하기 전에 테스트 코드가 종료 되어 보내지지 않은 것이었다. latch를 써서 보내는 걸 기다려주자. 
 
   ```kotlin
-
   @Test
   fun sendEmailTest() {
       val request = SendEmailRequest().apply {
@@ -70,7 +69,6 @@ nav_order: 2
       })
       latch.await()
   }
-
   ```
 
 
