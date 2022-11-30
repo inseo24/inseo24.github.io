@@ -27,9 +27,13 @@ nav_order: 1
 3. 환경 : 
    1. Istio 를 이용해 로드 밸런싱을 하고 있었고, 
    2. `www.xxx.com/service-name/` 로 서비스를 구분해 로드 밸런싱을 해줌
-4. Swagger-UI는 지정한 path로 검색 시 base-path로 redirect를 시킴
-   1. 이 때 `/service-name/` 이 날아가버림 
-   2. Istio에서 해당 주소가 어디 서비스인지 찾지 못해 404 에러가 뜸
+4. Swagger-UI는 지정한 path로 검색 시 내부적으로 만든 url로 redirect를 시킴
+   1. 이 url은 `REDIRECT_URL_PREFIX + uiRootPath + swaggerUiPath` 구조(`SwaggerUiHome` 코드에서 확인 가능)
+   2. 여기서 맨 앞 REDIRECT_URL_PREFIX 는 `"redirect:"`를 의미
+   3. `uiRootPath`가 servlet.context-path에서 설정하는 root path에 해당한다. 
+   4. `swaggerUiPath`는 `springdoc.swagger-ui.path`로 설정한 값에 해당한다.(yaml 설정)
+   5. 문제는 저 리다이렉션을 할 때, `www.xxx.com/service-name/`에서 `/service-name/` 이 날아가 버린다.
+   6. 이거 때문에 Istio에서 해당 주소가 어디 서비스인지 찾지 못해 404 에러가 뜬다.
 
 
 ---
