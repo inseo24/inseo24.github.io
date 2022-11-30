@@ -34,44 +34,44 @@ nav_order: 2
 
 - 코드가 동작하기 전에 테스트 코드가 종료 되어 보내지지 않은 것이었다. latch를 써서 보내는 걸 기다려주자. 
 
-```kotlin
-    
-    @Test
-    fun sendEmailTest() {
-        val request = SendEmailRequest().apply {
-            withDestination(Destination().withToAddresses(TO))
-            withMessage(Message().apply {
-                withBody(Body().apply {
-                    withHtml(Content().withCharset("UTF-8").withData(HTMLBODY))
-                        .withText(Content().withCharset("UTF-8").withData(TEXTBODY))
-                })
-                withSubject(Content().withCharset("UTF-8").withData(SUBJECT))
-            })
-            withSource(FROM)
-        }
+  ```kotlin
 
-        val threadCount = 1
-        val latch = CountDownLatch(threadCount)
+  @Test
+  fun sendEmailTest() {
+      val request = SendEmailRequest().apply {
+          withDestination(Destination().withToAddresses(TO))
+          withMessage(Message().apply {
+              withBody(Body().apply {
+                  withHtml(Content().withCharset("UTF-8").withData(HTMLBODY))
+                      .withText(Content().withCharset("UTF-8").withData(TEXTBODY))
+              })
+              withSubject(Content().withCharset("UTF-8").withData(SUBJECT))
+          })
+          withSource(FROM)
+      }
+
+      val threadCount = 1
+      val latch = CountDownLatch(threadCount)
 
 
-        awsSimpleEmailServiceAsync.sendEmailAsync(request, object : AsyncHandler<SendEmailRequest, SendEmailResult> {
-            override fun onSuccess(request: SendEmailRequest?, result: SendEmailResult?) {
-                println("\n on Success ")
-                val response: String = result!!.messageId
-                println(response)
-                latch.countDown()
-            }
+      awsSimpleEmailServiceAsync.sendEmailAsync(request, object : AsyncHandler<SendEmailRequest, SendEmailResult> {
+          override fun onSuccess(request: SendEmailRequest?, result: SendEmailResult?) {
+              println("\n on Success ")
+              val response: String = result!!.messageId
+              println(response)
+              latch.countDown()
+          }
 
-            override fun onError(e: Exception) {
-                println("\n on Error")
-                println(e.message)
-                latch.countDown()
-            }
-        })
-        latch.await()
-    }
-  
-```
+          override fun onError(e: Exception) {
+              println("\n on Error")
+              println(e.message)
+              latch.countDown()
+          }
+      })
+      latch.await()
+  }
+
+  ```
 
 
 
@@ -79,25 +79,26 @@ nav_order: 2
 
 
 
-- 알고보니 얘만 MIME 인코딩이 필요하다고 한다.
+- 알고보니 Sender Name만 MIME 인코딩이 필요하다고 한다.
 
-  - import com.amazonaws.AmazonWebServiceRequest 에 주석으로 달려 있다.
+  - `AmazonWebServiceRequest` 에 주석으로 달려 있다.
   
-```
-The sender name (also known as the friendly name) may contain non-ASCII characters. 
-These characters must be encoded using MIME encoded-word syntax, as described in RFC 2047 . MIME encoded-word syntax uses. 
-the following form: =?charset?encoding?encoded-text?= . 
-destination – The destination for this email, composed of To:, CC:, and BCC: fields. message – The message to be sent.
-```
+    ```
+    The sender name (also known as the friendly name) may contain non-ASCII characters. 
+    These characters must be encoded using MIME encoded-word syntax, as described in RFC 2047 . MIME encoded-word syntax uses. 
+    the following form: =?charset?encoding?encoded-text?= . 
+    destination – The destination for this email, composed of To:, CC:, and BCC: fields. message – The message to be sent.
+    ```
 
+  
   -  `javax.mail:mail:1.4.1` 의존성에 있는 MimeUtilty를 활용했다.
 
-  ```kotlin
-      
+      ```kotlin
+
       private fun encodeNameWithAddress(fromName: String, from: String): String {
           return MimeUtility.encodeText(fromName, "utf-8", "Q") + "<" + from + ">"
       }
-  ```
+      ```
 
 
 <br/>
