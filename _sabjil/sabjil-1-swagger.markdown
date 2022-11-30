@@ -50,29 +50,29 @@ nav_order: 1
    2. 이 때, service-name도 같이 써준다.
    3. 이럼 이제 `https://xxxx/service-name/swagger-ui/index.html` 로 접속하면 된다.
 
-```yaml
-springdoc:
-  api-docs:
-    path: /swagger/api-docs
+    ```yaml
+    springdoc:
+      api-docs:
+        path: /swagger/api-docs
 
-swagger-ui:
-  config-url: /service-name/api-docs/swagger-config
-  url: /service-name/swagger/api-docs
-  disable-swagger-default-url: true
-```
+    swagger-ui:
+      config-url: /service-name/api-docs/swagger-config
+      url: /service-name/swagger/api-docs
+      disable-swagger-default-url: true
+    ```
 
 <br/> 
 
 - 기어코 swagger ui path를 지정해주고 싶다면, 지정한 후 redirect 를 시켜주면 된다. 
    1. 나는 결국 index.html로 가는데 굳이? 라는 생각도 있어서 따로 리다이렉트를 하진 않았음 
    
-   ```kotlin
+     ```kotlin
     @Bean
     fun routerFunction(): RouterFunction<ServerResponse> =
         route(GET("/swagger-ui.path에 설정한 url")) {
             ServerResponse.temporaryRedirect(URI.create("/service-name/webjars/swagger-ui/index.html")).build()
         }
-   ```
+     ```
 
 
 <br/> 
