@@ -49,6 +49,7 @@ nav_order: 1
 2. 1번처럼 하면 Istio 설정에 변경할 게 많아지니 다른 방식을 쓰자고 함
    1. 기본적으로 나오는 petshop config를 안나오게 설정하고, api-docs path를 넣어줌
    2. 이 때, service-name도 같이 써준다.
+   3. 이럼 이제 `https://xxxx/service-name/swagger-ui/index.html` 로 접속하면 된다.
 
 ```yaml
 springdoc:
@@ -64,7 +65,15 @@ swagger-ui:
 <br/> 
 
 3. 기어코 swagger ui path를 지정해주고 싶다면, 지정한 후 redirect 를 시켜주면 된다. 
-   1. 근데 결국 index.html로 가는데 굳이? 라는 생각도 있어서 따로 리다이렉트를 하진 않았음
+   1. 나는 결국 index.html로 가는데 굳이? 라는 생각도 있어서 따로 리다이렉트를 하진 않았음 
+   
+   ```kotlin
+    @Bean
+    fun routerFunction(): RouterFunction<ServerResponse> =
+        route(GET("/swagger-ui.path에 설정한 url")) {
+            ServerResponse.temporaryRedirect(URI.create("/service-name/webjars/swagger-ui/index.html")).build()
+        }
+   ```
 
 
 <br/> 
